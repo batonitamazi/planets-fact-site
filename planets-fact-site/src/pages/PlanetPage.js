@@ -28,7 +28,28 @@ function PlanetPage({ data }) {
       </div>
       <div className='container--footer'>
         <div className='mini--info--card'>
-          
+          <span className='list--number'>
+            rotation time
+          </span>
+          <h1 className='footer--heading'>{data?.rotation}</h1>
+        </div>
+        <div className='mini--info--card'>
+          <span className='list--number'>
+            Revolution time
+          </span>
+          <h1 className='footer--heading'>{data?.revolution}</h1>
+        </div>
+        <div className='mini--info--card'>
+          <span className='list--number'>
+            Radius time
+          </span>
+          <h1 className='footer--heading'>{data?.radius}</h1>
+        </div>
+        <div className='mini--info--card'>
+          <span className='list--number'>
+            Average temp
+          </span>
+          <h1 className='footer--heading'>{data?.temperature}</h1>
         </div>
       </div>
     </div>

@@ -1,15 +1,22 @@
 .info--container {
     width: 85%;
-    height: 80%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: red; */
 }
 .about--planet-card {
     display: flex;
     height: 80%;
     justify-content: space-around;
+}
+.container--footer {
+    width: 88.7%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .planet--picture {
     margin-top: 100px;
@@ -68,12 +75,25 @@ a {
     color: rgba(255, 255, 255, 0.5);
     letter-spacing: 2.57px;
     padding-right: 10px;
+    text-transform: uppercase;
     padding-left: 5px;
+    font-size: 11px;
 }
-.container--footer {
-    width: 100%;
+
+.mini--info--card {
+    width: 20%;
+    height: 128px;
+    padding-left: 23px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.footer--heading {
+    font-size: 40px;
+    font-family: 'Antonio';
+    line-height: 51.76px;
+    letter-spacing: 1.5px;
+    
 }
