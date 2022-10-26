@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App" >
       <Router>
-
         <Navbar data={data} handleDrawer={handleDrawer} />
         {open ? <Drawer data={data} setOpen={setOpen} open={open}/> : (<Routes>
           <Route path='/' element={<PlanetPage data={data[0]} />} />

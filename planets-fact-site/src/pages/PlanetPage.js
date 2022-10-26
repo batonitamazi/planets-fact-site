@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './planetPage.css';
+import FilterButtons from '../components/filters/FilterButtons'
 
 const buttons = [
   {
@@ -13,6 +14,20 @@ const buttons = [
   {
     id: '03',
     text: 'Surface geology',
+  },
+]
+const buttons2 = [
+  {
+    id: '01',
+    text: 'Overview',
+  },
+  {
+    id: '02',
+    text: 'Structure',
+  },
+  {
+    id: '03',
+    text: 'Surface',
   },
 ]
 
@@ -33,7 +48,7 @@ function PlanetPage({ data }) {
   return (
     <div className='info--container'>
       <div className='about--planet-card'>
-        
+        <FilterButtons buttons={buttons2} handleClick={handleClick} active={active} data={data}/>
         <img src={Number(active) === 0 ? data?.images?.planet : (Number(active) === 1) ? data?.images?.internal : data?.images?.planet} alt={`${data?.name}`} id="planet--picture" className='planet--picture' />
         {Number(active) === 2 ? (<img src={data?.images?.geology} alt={`${data?.name}`} className="geology--img" />) : null}
         <div className='info--card'>
