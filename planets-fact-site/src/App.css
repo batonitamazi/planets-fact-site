@@ -10,3 +10,9 @@
   background-size: cover;
   background-color: #070724;
 }
+
+@media (max-width: 800px) {
+  .App {
+    height: 100vh;
+  }
+}

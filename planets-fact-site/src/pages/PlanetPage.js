@@ -1,27 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './planetPage.css';
 
+const buttons = [
+  {
+    id: '01',
+    text: 'Overview',
+  },
+  {
+    id: '02',
+    text: 'Internal Structure',
+  },
+  {
+    id: '03',
+    text: 'Surface geology',
+  },
+]
+
+
+
+
 function PlanetPage({ data }) {
+  const [active, setActive] = useState(0)
+
+  const activeStyle = {
+    backgroundColor: '#419EBB',
+  }
+
+  const handleClick = (e) => {
+    setActive(e.target.value);
+  }
+
   return (
     <div className='info--container'>
       <div className='about--planet-card'>
-        <img src={data?.images?.planet} alt={`${data?.name}`} id="planet--picture" className='planet--picture' />
+        <img src={Number(active) === 0 ? data?.images?.planet : (Number(active) === 1) ? data?.images?.internal : data?.images?.planet} alt={`${data?.name}`} id="planet--picture" className='planet--picture' />
+        {Number(active) === 2 ? (<img src={data?.images?.geology} alt={`${data?.name}`} className="geology--img" />) : null}
         <div className='info--card'>
-          <h1 className='planet--name'>{data?.name}</h1>
-          <p className='planet--paragraph'>
-            {data?.overview.content}
-          </p>
-          <a href={`${data?.overview.source}`}>Source: Wikipedia <img src='./assets/icon-source.svg' alt='src ' /></a>
+          <div>
+            <h1 className='planet--name'>{data?.name}</h1>
+            <p className='planet--paragraph'>
+              {data?.overview.content}
+            </p>
+            <a
+              href={`${Number(active) === 0 ? data?.overview.source
+                : Number(active) === 1 ? data?.structure.source
+                  : Number(active) === 2 ? data?.geology.source : null}`}
+            >Source: Wikipedia
+              <img src='./assets/icon-source.svg' alt='src ' />
+            </a>
+          </div>
+
           <div className='plannet--overview--buttons'>
-            <button className='button--overview active'>
-              <span className='list--number'>01</span> Overview
-            </button>
-            <button className='button--overview'>
-              <span className='list--number'>02</span> Internal structure
-            </button>
-            <button className='button--overview'>
-              <span className='list--number'>03</span> Surface geology
-            </button>
+            {buttons.map((btn, index) => {
+              return (
+                <button
+                  className='button--overview'
+                  key={index}
+                  onClick={handleClick}
+                  style={Number(active) === index ? { backgroundColor: `${data.color}`, border: "none" } : null}
+                  value={index}
+                >
+                  <span className='list--number'>{btn.id}</span>
+                  {btn.text}
+                </button>
+              )
+            })}
           </div>
         </div>
 
