@@ -178,7 +178,7 @@ a {
 
     }
 }
-@media (max-width: 400px){
+@media (max-width: 500px){
     .info--container {
         padding: 0px;
     }
