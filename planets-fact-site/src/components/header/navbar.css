@@ -35,7 +35,10 @@
 li {
     cursor: pointer;
 }
-
+.hamburger--icon {
+    display: none;
+    cursor: pointer;
+}
 @media (max-width: 800px){
     .nav {
         flex-direction: column;
@@ -48,4 +51,17 @@ li {
         padding: 0px;
     }
     
+}
+@media (max-width: 400px){
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 7%;
+    }
+    .hamburger--icon {
+        display: inline-block;
+    }
+    .nav--list {
+        display: none;
+    }
 }

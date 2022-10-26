@@ -33,10 +33,11 @@ function PlanetPage({ data }) {
   return (
     <div className='info--container'>
       <div className='about--planet-card'>
+        
         <img src={Number(active) === 0 ? data?.images?.planet : (Number(active) === 1) ? data?.images?.internal : data?.images?.planet} alt={`${data?.name}`} id="planet--picture" className='planet--picture' />
         {Number(active) === 2 ? (<img src={data?.images?.geology} alt={`${data?.name}`} className="geology--img" />) : null}
         <div className='info--card'>
-          <div>
+          <div className='text--container'>
             <h1 className='planet--name'>{data?.name}</h1>
             <p className='planet--paragraph'>
               {data?.overview.content}

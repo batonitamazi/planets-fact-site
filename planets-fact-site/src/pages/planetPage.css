@@ -1,4 +1,6 @@
 .info--container {
+    box-sizing: border-box;
+    padding-top: 130px;
     width: 85%;
     height: 70%;
     display: flex;
@@ -105,10 +107,13 @@ a {
 }
 .geology--img {
     position: absolute;
-    right: 67.5%;
-    top: 67%;
+    right: 68%;
+    top: 60%;
     max-width: 158px;
     max-height: 165px;
+}
+.managing--buttons {
+    display: none;
 }
 
 
@@ -172,5 +177,61 @@ a {
         right: 41%;
 
     }
-
+}
+@media (max-width: 400px){
+    .plannet--overview--buttons {
+        display: none;
+   }
+   .about--planet-card {
+        height: 55%;
+    }
+   .planet--picture {
+        max-width: 111px;
+        max-height: 111px;
+   }
+   .info--card {
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+   }
+   .text--container {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+   }
+   .planet--name {
+    font-size: 40px;
+   }
+   .container--footer {
+    width: 100%;
+    height: 30%;
+    flex-direction: column;
+    gap: 5%;
+   }
+   .mini--info--card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    padding-left: 20px;
+    padding-right: 20px;
+   }
+   .list--number {
+    padding: 0px;
+   }
+}
+@media (max-height: 760px){
+    .info--container {
+        margin-top: 20px;
+        gap: 15%;
+    }
+    .about--planet-card {
+        gap: 10%;
+    }
+    .footer--heading {
+        font-size: 20px;
+    }
 }
